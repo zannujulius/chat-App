@@ -7,5 +7,26 @@
 </head>
 <body>
     <p>Welcome to the chat app</p>
+
+
+    <!-- the scripts allows us to make connection to the backend -->
+    <script src="socket.io/socket.io.js"></script>
+    <!-- initial connection to connect to the backend -->
+    <!-- and keep the connection alive-->
+    <script type="text/javascript">
+        // to make a request to the backend 
+        // and the backend is going to respond
+        let socket = io();
+
+        //print something when the a user connects
+        socket.on('connect', () => {
+            console.log('Connected to Server!!')
+        })
+
+        socket.on('disconnect', () => {
+            console.log('disconnected from Server!!')
+        })
+        
+    </script>
 </body>
 </html>
