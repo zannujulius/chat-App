@@ -33,7 +33,7 @@ io.on('connection', socket => {
         text: 'New user joined',
         createAt: new Date().getTime()
     })
-
+     
     socket.on('createMessage', message => {
         console.log('createMessage', message)
         io.emit('newMessage', {
